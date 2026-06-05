@@ -3,40 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Interweb</title>
+
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
   </head>
+
   <body>
-    <nav id="navbar">
-      <div
-        class="container"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <a href="#" class="nav-logo">Interweb.al</a>
-
-        <button class="burger-btn" id="burgerBtn" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav-menu-wrapper" id="navMenu">
-          <ul class="nav-links">
-            <li><a href="#sherbime">Rreth Nesh</a></li>
-            <li><a href="#misioni">Shërbime</a></li>
-            <li><a href="#blogu">Projekte</a></li>
-          </ul>
-          <a href="#kontakto" class="nav-cta">Kontakto</a>
-        </div>
-      </div>
-    </nav>
+    <div id="header"></div>
 
     <section class="hero">
       <div class="hero-bg-circle c1"></div>
@@ -46,11 +23,12 @@
       <div class="hero-content">
         <h1>Ndërtojmë të ardhmen tuaj <em>dixhitale</em></h1>
         <p>
-          Zhvillim profesional faqesh interneti,web hosting dhe suport teknik.
+          Zhvillim profesional faqesh interneti, web hosting dhe suport teknik.
           Zgjidhje të besueshme për biznesin tuaj online.
         </p>
+
         <div class="hero-actions">
-          <a href="#sherbime" class="btn-primary">
+          <a href="sherbime.html" class="btn-primary">
             Shërbimet tona
             <svg
               viewBox="0 0 16 16"
@@ -64,6 +42,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="sherbime">
       <div class="container">
         <h2 class="section-title">Shërbimet Tona</h2>
@@ -109,11 +88,10 @@
             <h3>Web Hosting & Domain</h3>
             <p>
               Hostim i shpejtë dhe i sigurtë me uptime 99.9%, storage të
-              mjaftueshëm dhe brandwidth të pakufizuar.<strong
-                >Servera VPS</strong
-              >
-              të fuqishëm me panel të plotë kontrolli, backup automatik dhe
-              mbrojtje DDoS të avancuar.
+              mjaftueshëm dhe bandwidth të pakufizuar.
+              <strong>Servera VPS</strong>
+              të fuqishëm me panel kontrolli, backup automatik dhe mbrojtje
+              DDoS.
             </p>
           </div>
 
@@ -166,6 +144,7 @@
               </p>
             </div>
           </div>
+
           <div class="pstep reveal reveal-d2">
             <div class="pstep-left">
               <div class="pstep-num">02</div>
@@ -179,6 +158,7 @@
               </p>
             </div>
           </div>
+
           <div class="pstep reveal reveal-d3">
             <div class="pstep-left">
               <div class="pstep-num">03</div>
@@ -192,6 +172,7 @@
               </p>
             </div>
           </div>
+
           <div class="pstep reveal reveal-d4">
             <div class="pstep-left">
               <div class="pstep-num">04</div>
@@ -222,40 +203,42 @@
       </div>
     </section>
 
-    <section class="project-section" id="blogu">
+    <section class="project-section" id="projektet">
       <div class="container">
         <h2 class="section-title">Projektet tona</h2>
 
         <div class="project-grid">
-          <a href="#" class="project-card">
+          <a
+            href="https://igmj-group.com/"
+            class="project-card"
+            target="_blank"
+          >
             <div class="project-thumb">
-              <img src="IGMJ-Logo.png" alt="Logo" />
+              <img src="IGMJ-Logo.png" alt="IGMJ Group Logo" />
             </div>
             <div class="project-body">
               <h3>IGMJ-Group</h3>
-              <div class="project-date" href="https://igmj-group.com/">
-                Shiko faqen
-              </div>
+              <div class="project-date">Shiko faqen</div>
             </div>
           </a>
 
           <a href="#" class="project-card">
             <div class="project-thumb">
-              <img src="illyria.webp" alt="Logo" />
+              <img src="illyria.webp" alt="Discoverillyria Logo" />
             </div>
             <div class="project-body">
               <h3>Discoverillyria</h3>
-              <div class="project-date" href="#">Shiko faqen</div>
+              <div class="project-date">Shiko faqen</div>
             </div>
           </a>
 
           <a href="#" class="project-card">
             <div class="project-thumb">
-              <img src="drardi.webp" alt="Logo" />
+              <img src="drardi.webp" alt="Drardi Logo" />
             </div>
             <div class="project-body">
               <h3>Drardi</h3>
-              <div class="project-date" href="#">Shiko faqen</div>
+              <div class="project-date">Shiko faqen</div>
             </div>
           </a>
         </div>
@@ -266,111 +249,8 @@
       </div>
     </section>
 
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="#" class="nav-logo"
-              >Inter<span style="color: var(--blue-400)">web</span>.al</a
-            >
-            <div class="footer-contact" style="margin-top: 1.5rem">
-              <a href="mailto:info@interweb.al">
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >mark_email_unread</span
-                >
-                info@interweb.al</a
-              >
-              <a href="tel:+355682060333">
-                <span class="material-symbols-outlined" style="font-size: 12px"
-                  >call</span
-                >
-                +355 682 060 333</a
-              >
-              <a href="#">
-                <span
-                  class="material-symbols-outlined"
-                  style="font-size: 13px; color: red"
-                  >location_on</span
-                >
-                Rruga Pjeter Bogdani, Tirane</a
-              >
-            </div>
-          </div>
-          <div class="footer-col">
-            <h4>Kompania</h4>
-            <ul>
-              <li>
-                <a href="#">Rreth Nesh</a>
-              </li>
-              <li>
-                <a href="#">Projektet</a>
-              </li>
-              <li><a href="#">Blogu</a></li>
-              <li>
-                <a href="#">Karierra</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Shërbime</h4>
-            <ul>
-              <li>
-                <a href="#">Krijim Website</a>
-              </li>
-              <li>
-                <a href="#">Mirëmbajtje</a>
-              </li>
-              <li>
-                <a href="#">E-commerce</a>
-              </li>
-              <li>
-                <a href="#">Optimizim SEO</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Hosting</h4>
-            <ul>
-              <li>
-                <a href="#">Web Hosting</a>
-              </li>
-              <li>
-                <a href="#">Servera VPS</a>
-              </li>
-              <li>
-                <a href="#">Certifikata SSL</a>
-              </li>
-              <li>
-                <a href="#">Email Exchange</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span>© 2026 Interweb.al. Të gjitha të drejtat e rezervuara.</span>
-          <div style="display: flex; gap: 1.5rem">
-            <a
-              href="#"
-              style="
-                color: var(--blue-900);
-                text-decoration: none;
-                font-size: 0.8rem;
-              "
-              >Terms & Conditions</a
-            >
-            <a
-              href="#"
-              style="
-                color: var(--blue-900);
-                text-decoration: none;
-                font-size: 0.8rem;
-              "
-              >Privacy Policy</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer"></div>
+
     <script src="script.js"></script>
   </body>
 </html>

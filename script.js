@@ -7,3 +7,14 @@ const obs = new IntersectionObserver(
   { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
 );
 document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+fetch("./header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
+  });
+
+fetch("./footer.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("footer").innerHTML = data;
+  });
