@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projektet | Interweb</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/projekte.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <section class="projects-hero">
+      <div class="hero-bg-circle c1"></div>
+      <div class="hero-bg-circle c2"></div>
+      <div class="hero-grid-lines"></div>
+      <div class="container">
+        <h1>Projektet Tona</h1>
+      </div>
+    </section>
+
+    
+    <section class="projects-section">
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack">
+
+            <a href="https://igmj-group.com/" class="project-card" target="_blank">
+              <div class="project-thumb">
+                <img src="IGMJ-Logo.png" alt="IGMJ Group Logo" />
+                <div class="project-overlay">
+                  <span class="material-symbols-outlined">open_in_new</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-tag">Faqe Web</span>
+                <h3>IGMJ-Group</h3>
+                <p>Faqe korporative moderne për grupin IGMJ me dizajn profesional dhe performancë të lartë.</p>
+                <div class="project-link">
+                  Shiko faqen
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="project-card">
+              <div class="project-thumb">
+                <img src="illyria.webp" alt="Discoverillyria Logo" />
+                <div class="project-overlay">
+                  <span class="material-symbols-outlined">open_in_new</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-tag">Faqe Web</span>
+                <h3>Discoverillyria</h3>
+                <p>Platformë turistike për zbulimin e trashëgimisë ilire dhe destinacioneve kulturore.</p>
+                <div class="project-link">
+                  Shiko faqen
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="project-card">
+              <div class="project-thumb">
+                <img src="drardi.webp" alt="Drardi Logo" />
+                <div class="project-overlay">
+                  <span class="material-symbols-outlined">open_in_new</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-tag">Faqe Web</span>
+                <h3>Drardi</h3>
+                <p>Faqe biznesi me identitet të fortë vizual dhe eksperiencë përdoruesi të optimizuar.</p>
+                <div class="project-link">
+                  Shiko faqen
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="project-card">
+              <div class="project-thumb">
+                <img src="drardi.webp" alt="Drardi Logo" />
+                <div class="project-overlay">
+                  <span class="material-symbols-outlined">open_in_new</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-tag">Faqe Web</span>
+                <h3>Drardi</h3>
+                <p>Faqe biznesi me identitet të fortë vizual dhe eksperiencë përdoruesi të optimizuar.</p>
+                <div class="project-link">
+                  Shiko faqen
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+
+
+
+          </div>
+        </div>
+
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+
+      
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script>
+      const track = document.getElementById('carouselTrack');
+      const viewport = document.getElementById('carouselViewport');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      const cards = Array.from(track.querySelectorAll('.project-card'));
+      let current = 0;
+
+      function getVisible() {
+        if (window.innerWidth >= 992) return 3;
+        if (window.innerWidth >= 600) return 2;
+        return 1;
+      }
+
+      function totalPages() {
+        return Math.ceil(cards.length / getVisible());
+      }
+
+      function buildDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalPages(); i++) {
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+          dot.addEventListener('click', () => goTo(i));
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function goTo(index) {
+        const pages = totalPages();
+        current = Math.max(0, Math.min(index, pages - 1));
+        const visible = getVisible();
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 32;
+        const offset = current * visible * (cardWidth + gap);
+        track.style.transform = `translateX(-${offset}px)`;
+
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current >= pages - 1;
+
+        document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      
+      let startX = 0;
+      viewport.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+      viewport.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+      });
+
+      window.addEventListener('resize', () => { current = 0; buildDots(); goTo(0); });
+
+      buildDots();
+      goTo(0);
+    </script>
+  </body>
+</html>

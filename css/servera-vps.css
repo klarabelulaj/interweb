@@ -18,7 +18,7 @@
 
 .server-hero h1 {
     font-family: "Sora", sans-serif;
-    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-size: clamp(2.6rem, 6vw, 2rem);
     color: var(--navy);
     line-height: 1.1;
     letter-spacing: -0.04em;

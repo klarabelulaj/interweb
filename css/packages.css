@@ -18,7 +18,7 @@
 
 .packages-hero h1 {
     font-family: "Sora", sans-serif;
-    font-size: clamp(2.7rem, 6vw, 4.7rem);
+    font-size: clamp(2.7rem, 6vw, 2rem);
     color: var(--navy);
     line-height: 1.1;
     letter-spacing: -0.04em;
