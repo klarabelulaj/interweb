@@ -1,0 +1,308 @@
+.hosting-hero {
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 5% 90px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(160deg, #f0f7ff 0%, #fafcff 50%, #e8f2fb 100%);
+}
+
+.hosting-hero-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+}
+
+.hosting-hero h1 {
+    font-family: "Sora", sans-serif;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.4rem;
+}
+
+.hosting-hero p {
+    color: var(--text-mid);
+    font-size: 1.08rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hosting-plans {
+    padding: 100px 5%;
+    background: var(--gray-50);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-heading .section-sub {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hosting-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    align-items: stretch;
+}
+
+.hosting-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 18px;
+    padding: 2.4rem 2rem;
+    position: relative;
+    box-shadow: 0 14px 30px rgba(6, 30, 56, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.hosting-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--blue-200);
+    box-shadow: 0 20px 42px rgba(24, 95, 165, 0.11);
+}
+
+.hosting-card.featured {
+    border: 2px solid var(--blue-400);
+    transform: translateY(-18px);
+    box-shadow: 0 24px 50px rgba(24, 95, 165, 0.16);
+}
+
+.hosting-card.featured:hover {
+    transform: translateY(-24px);
+}
+
+.hosting-card h3 {
+    font-family: "Sora", sans-serif;
+    font-size: 1.35rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-family: "Sora", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue-600);
+    margin-bottom: 1.5rem;
+}
+
+.price span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.hosting-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.hosting-card li {
+    color: var(--text-mid);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    padding: 0.85rem 0 0.85rem 1.7rem;
+    border-bottom: 1px solid var(--gray-100);
+    position: relative;
+}
+
+.hosting-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--blue-600);
+    font-weight: 700;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffd75a;
+    color: #8a5a00;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+}
+
+.hosting-btn {
+    background: var(--blue-600);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    padding: 0.9rem 1.4rem;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 8px 18px rgba(24, 95, 165, 0.18);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.hosting-btn:hover {
+    background: var(--blue-800);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(24, 95, 165, 0.26);
+}
+
+.hosting-features {
+    padding: 70px 5%;
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.features-grid div {
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 14px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+}
+
+.features-grid span {
+    display: block;
+    font-family: "Sora", sans-serif;
+    color: var(--blue-600);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.features-grid p {
+    color: var(--text-mid);
+    font-size: 0.85rem;
+}
+
+.service-blocks {
+    padding: 100px 5%;
+    background: var(--gray-50);
+}
+
+.service-blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+}
+
+.service-block {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 18px;
+    padding: 2.4rem 2rem;
+    box-shadow: 0 14px 30px rgba(6, 30, 56, 0.05);
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: var(--blue-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon span {
+    font-size: 32px;
+    color: var(--blue-600);
+}
+
+.service-block h3 {
+    font-family: "Sora", sans-serif;
+    color: var(--navy);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.service-block p {
+    color: var(--text-mid);
+    font-size: 0.93rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+}
+
+.service-block ul {
+    list-style: none;
+}
+
+.service-block li {
+    color: var(--text-mid);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.7rem;
+}
+
+.service-block li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--blue-600);
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+
+    .hosting-grid,
+    .service-blocks-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .hosting-card.featured {
+        transform: none;
+    }
+
+    .hosting-card.featured:hover {
+        transform: translateY(-6px);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hosting-hero {
+        min-height: 45vh;
+        padding: 130px 5% 70px;
+    }
+
+    .hosting-plans,
+    .service-blocks {
+        padding: 70px 5%;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hosting-card,
+    .service-block {
+        padding: 2rem 1.5rem;
+    }
+}
