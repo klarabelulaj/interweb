@@ -6,7 +6,7 @@
     <title>Kontakt | Interweb</title>
 
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/about.css"/>
+    <link rel="stylesheet" href="css/about.css" />
     <link rel="stylesheet" href="css/contact.css" />
     <link
       rel="stylesheet"
@@ -17,7 +17,7 @@
   <body>
     <div id="header"></div>
 
-    <section class="about-hero">
+    <section class="contact-hero">
       <div class="hero-bg-circle c1"></div>
       <div class="hero-bg-circle c2"></div>
       <div class="hero-grid-lines"></div>
@@ -26,43 +26,93 @@
         <h1>Na Kontaktoni</h1>
       </div>
     </section>
-    
+
     <div class="contact-content">
-    <div class="kontakt-form">
+      <div class="kontakt-form">
+        <form id="contact-form">
+          <label for="fname">Emri</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="emri.."
+            required
+          />
 
-        <form action="action_page.php" method="post">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+          <label for="lname">Mbiemri</label>
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="mbiemri.."
+            required
+          />
 
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email.."
+            required
+          />
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your email.." required>
+          <label for="subject"> Mesazhi</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="mesazhi.."
+            style="height: 200px"
+            required
+          ></textarea>
 
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
-
-            <input type="submit" value="Submit">
-        
+          <input type="submit" value="Submit" id="submit-btn" />
         </form>
-    </div>
-    <div class="maps-container">
+      </div>
+      <div class="maps-container">
         <iframe
-            src="https://www.google.com/maps/embed?pb="
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
+          src="https://www.google.com/maps/embed?pb="
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
         </iframe>
-
-
+      </div>
     </div>
- 
-</div>
     <div id="footer"></div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("4POwcJb_7iBBJvNnQ");
+
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const btn = document.getElementById("submit-btn");
+            btn.value = "Duke dërguar...";
+            btn.disabled = true;
+
+            emailjs
+              .sendForm("service_mlpiuj4", "template_8mxht2o", this)
+              .then(() => {
+                btn.value = "U dërgua!";
+                btn.style.background = "#16a34a";
+                this.reset();
+              })
+              .catch((err) => {
+                btn.value = "Gabim! Provo përsëri.";
+                btn.style.background = "#dc2626";
+                btn.disabled = false;
+                console.error(err);
+              });
+          });
+      });
+    </script>
   </body>
 </html>
