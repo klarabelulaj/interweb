@@ -21,6 +21,17 @@ fetch("./header.html")
         navMenu.classList.toggle('active');
       });
     }
+    
+    document.querySelectorAll('.dropdown > a').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          
+          link.parentElement.classList.toggle('active');
+        }
+      });
+    
+    });
   });
   
 
